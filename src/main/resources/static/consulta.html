@@ -1,0 +1,25 @@
+/*
+<form id="formConsulta">
+    Nome: <input type="text" name="nome" id="nome"><br>
+    CPF: <input type="text" name="cpf" id="cpf"><br>
+    Data e hora: <input type="text" name="dataHora" id="dataHora"><br>
+    <button type="submit">Agendar</button>
+</form>
+<div id="mensagem"></div>
+<script>
+    document.getElementById("formConsulta").addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const cpf = document.getElementById("cpf").value;
+      const dataHora = document.getElementById("dataHora").value;
+
+      const response = await fetch('/consultas', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `nome=${encodeURIComponent(nome)}&cpf=${encodeURIComponent(cpf)}&dataHora=${encodeURIComponent(dataHora)}`
+      });
+      const text = await response.text();
+      document.getElementById("mensagem").innerText = text;
+    });
+</script>
+*/
